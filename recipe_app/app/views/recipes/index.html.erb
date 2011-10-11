@@ -2,24 +2,18 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Recipe</th>
     <th>Source</th>
-    <th>Url</th>
-    <th>Instructions</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Rating</th>
   </tr>
 
 <% @recipes.each do |recipe| %>
   <tr>
-    <td><%= recipe.name %></td>
-    <td><%= recipe.source %></td>
-    <td><%= recipe.url %></td>
-    <td><%= recipe.instructions %></td>
-    <td><%= link_to 'Show', recipe %></td>
+    <td><%= link_to recipe.name, recipe %></td>
+    <td><%= link_to recipe.source, recipe.url %></td>
+    <td></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

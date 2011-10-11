@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Recipe</b>
   <%= @recipe.name %>
 </p>
 
 <p>
-  <b>Source:</b>
-  <%= @recipe.source %>
+  <b>Source</b>
+  <%= link_to @recipe.source, @recipe.url %>
 </p>
 
 <p>
