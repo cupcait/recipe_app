@@ -23,6 +23,16 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+
+  <%= f.fields_for :ingredients do |ingredient_fields| %>
+    <div class="field">
+      <%= ingredient_fields.label :amount %><br />
+      <%= ingredient_fields.text_field :amount %>
+      <%= ingredient_fields.label :name %><br />
+      <%= ingredient_fields.text_field :name %>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label "Instructions *" %><br />
     <%= f.text_area :instructions %>
