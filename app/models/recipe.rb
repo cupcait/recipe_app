@@ -6,7 +6,13 @@ class Recipe < ActiveRecord::Base
 
   validates :name,         :presence => true
   validates :source,       :presence => true
-#  validates :ingredients,  :presence => true
+  # require ingredients later:
+  # validates :ingredients,  :presence => true
   validates :instructions, :presence => true
 
+
+  def add_ingredient
+    # Do I want build or new?
+    self.ingredients.build
+  end
 end

@@ -22,14 +22,22 @@
   <div class="field">
     <%= f.label :url %><br />
     <%= f.text_field :url %>
-  </div>
+  </div> 
 
-  <%= f.fields_for :ingredients do |ingredient_fields| %>
+  <!= I'm not really sure where the following line should go, or if I need it. %>
+  <input type="hidden" name="ingredients[]" value="json_encoded_fields" />
+
+  <!= Should I NOT be using :ingredients here? Just random fields which will be stored as data later? => 
+  <%= f.fields_for :ingredients do |fields| %>
     <div class="field">
-      <%= ingredient_fields.label :amount %><br />
-      <%= ingredient_fields.text_field :amount %>
-      <%= ingredient_fields.label :name %><br />
-      <%= ingredient_fields.text_field :name %>
+      <%= fields.label :amount %><br />
+      <%= fields.text_field :amount %>
+      <%= fields.label :name %><br />
+      <%= fields.text_field :name %>
+    </div>
+    <div class="actions">
+      <%= link_to "[+]", @recipe.add_ingredient %>
+      <!= Here: I want to add a new line of the form for a new ingredient and store this one in the ingredients array - json encoded? =>
     </div>
   <% end %>
   
@@ -39,5 +47,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+    <!= I want to @recipe.ingredients.create each element of ingredients[] on submit =>
   </div>
 <% end %>
