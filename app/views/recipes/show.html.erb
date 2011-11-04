@@ -7,12 +7,16 @@
 
 <p>
   <b>Source</b>
-  <%= link_to @recipe.source, @recipe.url %>
+  <% unless @recipe.url.empty? %>
+    <%= link_to @recipe.source, @recipe.url %>
+  <% else %>
+    <%= @recipe.source %>
+  <% end %>
 </p>
 
 <p>
-  <b>Url:</b>
-  <%= @recipe.url %>
+  <b>Ingredients:</b>
+  <%= @recipe.ingredients %>
 </p>
 
 <p>
