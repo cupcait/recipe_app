@@ -24,8 +24,8 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   # GET /ingredients/new.xml
   def new
-    @ingredient = Ingredient.new
-
+    @ingredient = Ingredient.new(:recipe_id => params[:recipe_id])
+    puts @ingredient.inspect
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @ingredient }
@@ -44,7 +44,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to(@ingredient, :notice => 'Ingredient was successfully created.') }
+        format.html { redirect_to(Recipe.find(@ingredient.recipe_id), :notice => 'Ingredient was successfully created.') }
         format.xml  { render :xml => @ingredient, :status => :created, :location => @ingredient }
       else
         format.html { render :action => "new" }
@@ -76,7 +76,7 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
 
     respond_to do |format|
-      format.html { redirect_to(ingredients_url) }
+      format.html { redirect_to(Recipe.find(@ingredient.recipe_id)) }
       format.xml  { head :ok }
     end
   end

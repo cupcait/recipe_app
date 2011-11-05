@@ -16,7 +16,12 @@
 
 <p>
   <b>Ingredients:</b>
-  <%= @recipe.ingredients %>
+  <% @ingredients.each do |ingredient| %>
+    <br />
+    <%= ingredient.name %>  <%= link_to "[-]", ingredient, :confirm => "Are you sure?", :method => :delete %>
+  <% end %>
+  <br />
+  <%= link_to "[+]", new_ingredient_path(:recipe_id => @recipe.id) %>
 </p>
 
 <p>

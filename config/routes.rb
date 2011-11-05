@@ -1,6 +1,6 @@
 RecipeApp::Application.routes.draw do
   resources :recipes
-  resources :ingredients, :only => [:create, :destroy]
+  resources :ingredients
 
   match '/new', :to => 'recipes#new'
 

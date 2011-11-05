@@ -23,16 +23,11 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div> 
-<br /><br />
-<h3>Ingredient(s):</h3>
-  <%= render 'ingredients/collection_partial', :form => f, :recipe => @recipe%>
-<br /><br />
   <div class="field">
     <%= f.label "Instructions *" %><br />
     <%= f.text_area :instructions %>
   </div>
   <div class="actions">
     <%= f.submit %>
-    <!= I want to @recipe.ingredients.create each element of ingredients[] on submit =>
   </div>
 <% end %>
