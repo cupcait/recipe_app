@@ -16,17 +16,20 @@
 
 <p>
   <b>Ingredients:</b>
-  <% @ingredients.each do |ingredient| %>
-    <br />
-    <%= ingredient.name %>  <%= link_to "[-]", ingredient, :confirm => "Are you sure?", :method => :delete %>
-  <% end %>
+  <%= render 'ingredients/show_all', :ingredients => @ingredients %>
   <br />
   <%= link_to "[+]", new_ingredient_path(:recipe_id => @recipe.id) %>
 </p>
-
 <p>
   <b>Instructions:</b>
   <%= @recipe.instructions %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @recipe.relationships.each do |tag_id| %>
+    <%= tag_id %>
+  <% end %>
 </p>
 
 

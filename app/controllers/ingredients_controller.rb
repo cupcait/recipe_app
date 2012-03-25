@@ -14,6 +14,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1.xml
   def show
     @ingredient = Ingredient.find(params[:id])
+    @recipe = Recipe.find(@ingredient.recipe_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,11 +26,11 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new.xml
   def new
     @ingredient = Ingredient.new(:recipe_id => params[:recipe_id])
-    puts @ingredient.inspect
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @ingredient }
-    end
+
+    #respond_to do |format|
+    #  format.html # new.html.erb
+    #  format.xml  { render :xml => @ingredient }
+    #end
   end
 
   # GET /ingredients/1/edit

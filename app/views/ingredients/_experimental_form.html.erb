@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <td>Amount *</td>
+    <td>Name *</td></tr>
+<% f.fields_for :ingredients do |ingredient| %>
+   <tr>
+    <td><%= ingredient.text_field :amount %></td>
+    <td><%= ingredient.text_field :name %></td></tr>
+<% end %>
+    </table>
+

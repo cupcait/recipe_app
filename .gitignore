@@ -7,4 +7,4 @@ tmp/
 *~
 .project
 .DS_Store
-
+.idea/*

@@ -1,8 +1,11 @@
 class Recipe < ActiveRecord::Base
   has_many :ingredients, :dependent => :destroy
-  attr_accessible :name, :source, :url, :ingredients, :instructions
+  has_many :relationships, :foreign_key => :tag_id, :dependent => :destroy
+  has_many :tags, :through => :relationships
 
-  accepts_nested_attributes_for :ingredients
+  attr_accessible :name, :source, :url, :ingredients_attributes, :instructions, :relationships
+
+  accepts_nested_attributes_for :ingredients, :relationships
 
   validates :name,         :presence => true
   validates :source,       :presence => true
@@ -10,9 +13,20 @@ class Recipe < ActiveRecord::Base
   # validates :ingredients,  :presence => true
   validates :instructions, :presence => true
 
+  def tagged?(tag)
+    relationships.find_by_tag_id(tag)
+  end
 
-  def add_ingredient
-    # Do I want build or new?
+  def tag!(tag)
+    relationships.create!(:tag_id => tag.id)
+  end
+
+  def untag!(tag)
+    relationships.find_by_tag_id(tag).destroy
+  end
+
+  def new_ingredient
     self.ingredients.build
   end
+
 end

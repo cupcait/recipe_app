@@ -27,11 +27,17 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
 
+    2.times { @recipe.ingredients.build }
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
     end
+
   end
+
+
+
 
   # GET /recipes/1/edit
   def edit
@@ -42,6 +48,14 @@ class RecipesController < ApplicationController
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
+
+    puts "ingredients!"
+    puts @recipe.ingredients
+
+    @recipe.ingredients.each do |ingredient|
+      Ingredient.create(ingredient)
+    end
+
 
     respond_to do |format|
       if @recipe.save
@@ -60,6 +74,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     respond_to do |format|
+      #@recipe.attributes = {'tag_id' => []}.merge(params[:recipe] || {})
       if @recipe.update_attributes(params[:recipe])
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
         format.xml  { head :ok }

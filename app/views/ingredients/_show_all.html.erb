@@ -1,0 +1,9 @@
+<% ingredients.each do |ing| %>
+  <br />
+  <%= ing.amount %>
+  <%= ing.unit %>
+  <%= ing.name %>  
+  <%= ing.preparation %>
+  <%= link_to '[-]', ing, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
+

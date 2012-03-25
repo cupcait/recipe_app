@@ -10,27 +10,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label "Amount *" %><br />
-    <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :unit %><br />
-    <%= f.text_field :unit %>
-  </div>
-  <div class="field">
-    <%= f.label "Ingredient name *" %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :preparation %><br />
-    <%= f.text_field :preparation %>
-  </div>
-  <div class="field">
-    <%= f.label :recipe_id %>
-    <%= f.text_field :recipe_id %>
-  </div>
+  <table>
+    <tr>
+      <td>Amount *</td>
+      <td>Unit</td>
+      <td>Ingredient *</td>
+      <td>Preparation</td>
+    </tr>
+    <tr>
+      <td class="field">
+        <%= f.text_field :amount %>
+      </td>
+      <td class="field">
+        <%= f.text_field :unit %>
+      </td>
+      <td class="field">
+        <%= f.text_field :name %>
+      </td>
+      <td class="field">
+        <%= f.text_field :preparation %>
+      </td>
+    </tr></table>
+    <%= f.text_field :recipe_id, :type => "hidden" %>
   <div class="actions">
     <%= f.submit %>
   </div>
