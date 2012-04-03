@@ -15,6 +15,7 @@ class IngredientsController < ApplicationController
   def show
     @ingredient = Ingredient.find(params[:id])
     @recipe = Recipe.find(@ingredient.recipe_id)
+    @recipe_path = "/recipes/#{@ingredient.recipe_id}"
 
     respond_to do |format|
       format.html # show.html.erb
