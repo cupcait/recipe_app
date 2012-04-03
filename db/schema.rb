@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314035333) do
+ActiveRecord::Schema.define(:version => 20120403030502) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "amount"
@@ -33,16 +33,12 @@ ActiveRecord::Schema.define(:version => 20120314035333) do
     t.datetime "updated_at"
   end
 
-  create_table "relationships", :force => true do |t|
-    t.integer  "recipe_id"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "recipes_tags", :id => false, :force => true do |t|
+    t.integer "recipe_id"
+    t.integer "tag_id"
   end
 
-  add_index "relationships", ["recipe_id", "tag_id"], :name => "index_relationships_on_recipe_id_and_tag_id", :unique => true
-  add_index "relationships", ["recipe_id"], :name => "index_relationships_on_recipe_id"
-  add_index "relationships", ["tag_id"], :name => "index_relationships_on_tag_id"
+  add_index "recipes_tags", ["recipe_id", "tag_id"], :name => "index_recipes_tags_on_recipe_id_and_tag_id", :unique => true
 
   create_table "tags", :force => true do |t|
     t.string   "value"

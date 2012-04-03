@@ -27,7 +27,7 @@
 
 <p>
   <b>Tags:</b>
-  <%= @recipe.relationships.each do |tag_id| %>
+  <%= @recipe.tags.each do |tag_id| %>
     <%= tag_id %>
   <% end %>
 </p>

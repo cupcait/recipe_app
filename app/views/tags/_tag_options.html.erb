@@ -1,6 +1,6 @@
 <%= @tags.each_with_index do |tag, index| %>
     <div class="field">
-      <%= check_box_tag "recipe[relationships_attributes][#{index}][tag_id]", tag.id, recipe.tags.include?(tag) %>
+      <%= check_box_tag "recipe[tags][tag_id]", tag.id, recipe.tags.include?(tag) %>
       <%= tag.value %>
     </div>
 <% end %>
