@@ -26,8 +26,9 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
+    @tags = Tag.all
 
-    2.times { @recipe.ingredients.build }
+    5.times { @recipe.ingredients.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,12 +37,10 @@ class RecipesController < ApplicationController
 
   end
 
-
-
-
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    @tags = Tag.all
   end
 
   # POST /recipes

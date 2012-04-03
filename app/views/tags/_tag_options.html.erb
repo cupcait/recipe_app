@@ -1,6 +1,6 @@
-<%= for tag in Tag.find(:all) do %>
+<%= @tags.each_with_index do |tag, index| %>
     <div class="field">
-      <%= check_box_tag "recipe.tag_list[]", tag, recipe.tags.include?(tag) %>
-      <%= tag.name %>
+      <%= check_box_tag "recipe[relationships_attributes][#{index}][tag_id]", tag.id, recipe.tags.include?(tag) %>
+      <%= tag.value %>
     </div>
 <% end %>

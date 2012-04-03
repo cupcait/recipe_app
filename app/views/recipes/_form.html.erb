@@ -46,10 +46,10 @@
 
     <%= f.fields_for :relationships, :url => {:action => 'new'} do |tags_form| %>
         some things should happen!
-      <%= render 'tags/tag_options', {:f => tags_form, :recipe => @recipe} %>
+        <%= render 'tags/tag_options', {:f => tags_form, :recipe => @recipe} %>
     <% end %>
 
-  <div class="actions">
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
