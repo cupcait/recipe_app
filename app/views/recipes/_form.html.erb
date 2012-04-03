@@ -44,10 +44,13 @@
     <%= f.text_area :instructions %>
   </div>
 
-    <%= f.fields_for :tags, :url => {:action => 'new'} do |tags_form| %>
-        some things should happen!
-        <%= render 'tags/tag_options', {:f => tags_form, :recipe => @recipe} %>
+    <%= @tags.each do |tag| %>
+        <div class="field">
+          <%= check_box_tag "recipe[tag_ids][]", tag.id, @recipe.tags.include?(tag) %>
+          <%= tag.value %>
+        </div>
     <% end %>
+
 
     <div class="actions">
     <%= f.submit %>

@@ -70,6 +70,8 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
+
+    params[:recipe][:tag_ids] ||= []
     @recipe = Recipe.find(params[:id])
 
     respond_to do |format|
