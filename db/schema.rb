@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423025059) do
+ActiveRecord::Schema.define(:version => 20120423041316) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "amount"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20120423025059) do
     t.string   "name"
     t.string   "source"
     t.string   "url"
-    t.text     "instructions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
