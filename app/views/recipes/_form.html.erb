@@ -44,7 +44,7 @@
     <%= f.text_area :instructions %>
   </div>
 
-    <%= @tags.each do |tag| %>
+    <% @tags.each do |tag| %>
         <div class="field">
           <%= check_box_tag "recipe[tag_ids][]", tag.id, @recipe.tags.include?(tag) %>
           <%= tag.value %>

@@ -7,7 +7,7 @@
 
 <p>
   <b>Source</b>
-  <% unless @recipe.url.empty? %>
+  <% unless @recipe.url == '' %>
     <%= link_to @recipe.source, @recipe.url %>
   <% else %>
     <%= @recipe.source %>
@@ -27,8 +27,8 @@
 
 <p>
   <b>Tags:</b>
-  <%= @recipe.tags.each do |tag| %>
-    <%= tag.value %>
+  <% @recipe.tags.each do |tag| %>
+    <%=  tag.value %>
   <% end %>
 </p>
 
