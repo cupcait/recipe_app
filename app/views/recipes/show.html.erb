@@ -22,7 +22,9 @@
 </p>
 <p>
   <b>Instructions:</b>
-  <%= @recipe.instructions %>
+  <%= render 'instructions/show_all', :instructions => @instructions %>
+  <br />
+  <%= link_to "[+]", new_instruction_path(:recipe_id => @recipe.id) %>
 </p>
 
 <p>

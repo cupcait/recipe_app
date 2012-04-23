@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403030502) do
+ActiveRecord::Schema.define(:version => 20120423025059) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "amount"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 20120403030502) do
   end
 
   add_index "ingredients", ["recipe_id"], :name => "index_ingredients_on_recipe_id"
+
+  create_table "instructions", :force => true do |t|
+    t.text     "content"
+    t.integer  "order"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "recipes", :force => true do |t|
     t.string   "name"

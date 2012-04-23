@@ -3,6 +3,7 @@ RecipeApp::Application.routes.draw do
 
   resources :recipes
   resources :ingredients
+  resources :instructions
 
   match '/new', :to => 'recipes#new'
 

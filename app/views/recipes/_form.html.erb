@@ -40,8 +40,12 @@
     </table>
 
   <div class="field">
-    <%= f.label "Instructions *" %><br />
-    <%= f.text_area :instructions %>
+    <%= f.label 'Instructions:' %>
+    <%= f.fields_for :instructions, :url => {:action => 'new'} do |instruction_form| %>
+      <br />
+      <%= instruction_form.text_field :content %></td>
+      <% instruction_form.hidden_field :order, {:value => 1} %>
+    <% end %>
   </div>
 
     <% @tags.each do |tag| %>

@@ -14,7 +14,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.xml
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.ingredients
+    @ingredients  = @recipe.ingredients
+    @instructions = @recipe.instructions
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,6 +30,7 @@ class RecipesController < ApplicationController
     @tags = Tag.all
 
     5.times { @recipe.ingredients.build }
+    5.times { @recipe.instructions.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,13 +50,13 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(params[:recipe])
 
-    puts "ingredients!"
-    puts @recipe.ingredients
-
     @recipe.ingredients.each do |ingredient|
       Ingredient.create(ingredient)
     end
 
+    @recipe.instructions.each do |instruction|
+      Instruction.create(instruction)
+    end
 
     respond_to do |format|
       if @recipe.save

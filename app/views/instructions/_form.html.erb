@@ -1,0 +1,24 @@
+<%= form_for(@instruction) do |f| %>
+  <% if @instruction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instruction.errors.count, "error") %> prohibited this instruction from being saved:</h2>
+
+      <ul>
+      <% @instruction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :content %>
+  </div>
+
+  <% f.hidden_field :order, {:value => 1} %>
+
+ <%= f.text_field :recipe_id, :type => "hidden" %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

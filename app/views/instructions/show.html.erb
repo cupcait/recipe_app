@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @instruction.content %>
+</p>
+
+<p>
+  <b>Recipe:</b>
+  <%= @instruction.recipe_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_instruction_path(@instruction) %> |
+<%= link_to 'Back', @recipe_path %>
