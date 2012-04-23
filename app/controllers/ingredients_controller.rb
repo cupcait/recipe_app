@@ -27,6 +27,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new.xml
   def new
     @ingredient = Ingredient.new(:recipe_id => params[:recipe_id])
+    @recipe_path = "/recipes/#{@ingredient.recipe_id}"
 
     #respond_to do |format|
     #  format.html # new.html.erb
@@ -37,6 +38,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1/edit
   def edit
     @ingredient = Ingredient.find(params[:id])
+    @recipe_path = "/recipes/#{@ingredient.recipe_id}"
   end
 
   # POST /ingredients
