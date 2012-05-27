@@ -26,7 +26,10 @@
   <br />
   <%= link_to "[+]", new_instruction_path(:recipe_id => @recipe.id) %>
 </p>
-
+<p>
+  <b>Rating:</b>
+  <%= render 'show_rating', :rating => @recipe.rating %>
+</p>
 <p>
   <b>Tags:</b>
   <% @recipe.tags.each do |tag| %>

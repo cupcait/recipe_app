@@ -47,7 +47,13 @@
       <% instruction_form.hidden_field :order, {:value => 1} %>
     <% end %>
   </div>
+  
+    <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </div> 
 
+  
     <% @tags.each do |tag| %>
         <div class="field">
           <%= check_box_tag "recipe[tag_ids][]", tag.id, @recipe.tags.include?(tag) %>

@@ -11,7 +11,7 @@
   <tr>
     <td><%= link_to recipe.name, recipe %></td>
     <td><%= recipe.url == '' ? recipe.source : link_to(recipe.source, recipe.url) %></td>
-    <td></td>
+    <td><%= render 'show_rating', :rating => recipe.rating %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= link_to 'Delete', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

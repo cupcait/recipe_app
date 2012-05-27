@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    @tags = Tag.all
+    @tags = Tag.all || []
 
     5.times { @recipe.ingredients.build }
     5.times { @recipe.instructions.build }
@@ -42,13 +42,14 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
-    @tags = Tag.all
+    @tags = Tag.all || []
   end
 
   # POST /recipes
   # POST /recipes.xml
   def create
     @recipe = Recipe.new(params[:recipe])
+    @tags = Tag.all || []
 
     @recipe.ingredients.each do |ingredient|
       Ingredient.create(ingredient)
