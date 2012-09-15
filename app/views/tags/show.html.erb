@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Value:</b>
-  <%= @tag.value %>
+  All <%= @tag.value %> recipes
 </p>
+
+<ul>
+  <% @tag.recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+  <% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |

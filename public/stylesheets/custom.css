@@ -1,5 +1,9 @@
 .container {
-  width: 710px;
+  background: #fff;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  margin-left: 75px;
 }
 
 body {
@@ -13,6 +17,7 @@ header {
 header img {
   padding: 1em;
   background: #fff;
+  width: 75px;
 }
 
 section {
@@ -20,6 +25,7 @@ section {
   font-size: 120%;
   padding: 50px;
   background: #fff;
+  margin-top: 10px;
 }
 
 section h1 {

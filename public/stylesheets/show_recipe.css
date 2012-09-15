@@ -1,0 +1,17 @@
+a.tag-link {
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #ffccdd;
+  padding: 5px;
+  -moz-border-radius:    3px;
+  -webkit-border-radius: 3px;
+  border-radius:         3px;
+  text-decoration: none;
+
+}
+
+a.tag-link:hover {
+  background: #c16;
+}
+

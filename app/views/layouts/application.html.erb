@@ -7,6 +7,12 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
+    <header class="navbar navbar-fixed-top">
+      <div class="container round">
+        <%= link_to image_tag("cupcait.png", alt: "CupCait"), '/' %>
+      </div>
+    </header>
+
     <section class="round">
       <%= yield %>
     </section>

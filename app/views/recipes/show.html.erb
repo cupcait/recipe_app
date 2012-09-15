@@ -31,10 +31,11 @@
   <%= render 'show_rating', :rating => @recipe.rating %>
 </p>
 <p>
-  <b>Tags:</b>
-  <% @recipe.tags.each do |tag| %>
-    <%=  tag.value %>
-  <% end %>
+  <div class="tags"><b>Tags:</b>
+    <% @recipe.tags.each do |tag| %>
+      <span><%= link_to tag.value, tag_path(tag), :class => 'tag-link' %>   </span>
+    <% end %>
+  </div>
 </p>
 
 

@@ -54,7 +54,7 @@
   </div> 
 
   
-    <% @tags.each do |tag| %>
+    <% Tag.all.each do |tag| %>
         <div class="field">
           <%= check_box_tag "recipe[tag_ids][]", tag.id, @recipe.tags.include?(tag) %>
           <%= tag.value %>
