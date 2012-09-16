@@ -18,13 +18,12 @@
   <b>Ingredients:</b>
   <%= render 'ingredients/show_all', :ingredients => @ingredients %>
   <br />
-  <%= link_to "[+]", new_ingredient_path(:recipe_id => @recipe.id) %>
+
 </p>
 <p>
   <b>Instructions:</b>
   <%= render 'instructions/show_all', :instructions => @instructions %>
   <br />
-  <%= link_to "[+]", new_instruction_path(:recipe_id => @recipe.id) %>
 </p>
 <p>
   <b>Rating:</b>

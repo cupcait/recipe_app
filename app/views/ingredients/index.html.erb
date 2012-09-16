@@ -2,20 +2,15 @@
 
 <table>
   <tr>
-    <th>Amount</th>
-    <th>Unit</th>
+    <th>Quantity</th>
     <th>Name</th>
     <th>Preparation</th>
     <th>Recipe</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @ingredients.each do |ingredient| %>
   <tr>
-    <td><%= ingredient.amount %></td>
-    <td><%= ingredient.unit %></td>
+    <td><%= ingredient.quantity %></td>
     <td><%= ingredient.name %></td>
     <td><%= ingredient.preparation %></td>
     <td><%= ingredient.recipe_id %></td>

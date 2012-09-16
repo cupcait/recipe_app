@@ -21,22 +21,20 @@
   <div class="field">
     <%= f.label :url %><br />
     <%= f.text_field :url %>
-  </div> 
+  </div>
 
     <%= f.label 'Ingredients:' %>
     <table>
       <tr>
-        <td>Amount *</td>
-        <td>Unit</td>
+        <td>Quantity</td>
         <td>Name *</td>
         <td>Prep</td></tr>
       <tr>
       <%= f.fields_for :ingredients, :url => {:action => 'new'} do |ingredient_form| %>
-       <tr>
-         <%= render 'ingredients/experimental_form', :f => ingredient_form %>
-       </tr>
+        <tr id="ingredient-list">
+          <%= render 'ingredients/nested_form', :f => ingredient_form %>
+        </tr>
       <% end %>
-
     </table>
 
   <div class="field">
