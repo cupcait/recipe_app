@@ -1,7 +1,10 @@
-<% ingredients.each do |ing| %>
-  <br />
-  <%= ing.quantity %>
-  <%= ing.name %>  
-  <%= ing.preparation %>
-<% end %>
+<ul>
+  <% ingredients.each do |ing| %>
+    <li>
+      <%= ing.quantity %>
+      <%= ing.name %>
+      <%= ing.preparation %>
+    </li>
+  <% end %>
+</ul>
 

@@ -1,0 +1,51 @@
+#recipe-name {
+  font-size: 35px;
+  color: #cc1166;
+}
+#overview {
+  display: inline-block;
+
+  #recipe-source {
+    float: left;
+    margin-left: 20px;
+  }
+
+  #rating-stars {
+    float: left;
+    margin-left: 50px;
+  }
+
+}
+
+#recipe-tags {
+  float: right;
+  width: 50%;
+
+  a.tag-link {
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #ffccdd;
+    padding: 5px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+    border-radius:         3px;
+    text-decoration: none;
+  }
+
+  a.tag-link:hover {
+    background: #c16;
+  }
+}
+
+#ingredient-list {
+  position: relative;
+  margin: 10px 0;
+
+}
+
+#instruction-list {
+
+}
+
+

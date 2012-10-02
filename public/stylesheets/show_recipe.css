@@ -1,17 +1,32 @@
-a.tag-link {
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #ffccdd;
-  padding: 5px;
-  -moz-border-radius:    3px;
-  -webkit-border-radius: 3px;
-  border-radius:         3px;
-  text-decoration: none;
+#recipe-name {
+  font-size: 35px;
+  color: #cc1166; }
 
-}
+#overview {
+  display: inline-block; }
+  #overview #recipe-source {
+    float: left;
+    margin-left: 20px; }
+  #overview #rating-stars {
+    float: left;
+    margin-left: 50px; }
 
-a.tag-link:hover {
-  background: #c16;
-}
+#recipe-tags {
+  float: right;
+  width: 50%; }
+  #recipe-tags a.tag-link {
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #ffccdd;
+    padding: 5px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none; }
+  #recipe-tags a.tag-link:hover {
+    background: #c16; }
 
+#ingredient-list {
+  position: relative;
+  margin: 10px 0; }

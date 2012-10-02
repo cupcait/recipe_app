@@ -1,42 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div id="recipe">
+  <p id="notice" style="display: none"><%= notice %></p>
 
-<p>
-  <b>Recipe</b>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <b>Source</b>
-  <% unless @recipe.url == '' %>
-    <%= link_to @recipe.source, @recipe.url %>
-  <% else %>
-    <%= @recipe.source %>
-  <% end %>
-</p>
-
-<p>
-  <b>Ingredients:</b>
-  <%= render 'ingredients/show_all', :ingredients => @ingredients %>
-  <br />
-
-</p>
-<p>
-  <b>Instructions:</b>
-  <%= render 'instructions/show_all', :instructions => @instructions %>
-  <br />
-</p>
-<p>
-  <b>Rating:</b>
-  <%= render 'show_rating', :rating => @recipe.rating %>
-</p>
-<p>
-  <div class="tags"><b>Tags:</b>
-    <% @recipe.tags.each do |tag| %>
-      <span><%= link_to tag.value, tag_path(tag), :class => 'tag-link' %>   </span>
-    <% end %>
+  <div id="recipe-name">
+    <%= @recipe.name %>
   </div>
-</p>
+
+  <div id="overview">
+    <div id="recipe-source">
+      via
+      <% unless @recipe.url == '' %>
+        <%= link_to @recipe.source, @recipe.url, :id => 'source-link', :target => '_blank' %>
+      <% else %>
+        <%= @recipe.source %>
+      <% end %>
+    </div>
 
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+    <div id="rating-stars">
+      <%= render 'show_rating', :rating => @recipe.rating %>
+    </div>
+  </div>
+
+  <div id="recipe-tags">
+    <div class="tags">
+      <% @recipe.tags.each do |tag| %>
+          <span><%= link_to tag.value, tag_path(tag), :class => 'tag-link' %>   </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="ingredient-list">
+    <b>Ingredients:</b>
+    <%= render 'ingredients/show_all', :ingredients => @ingredients %>
+  </div>
+
+  <div id="instruction-list">
+    <b>Instructions:</b>
+    <%= render 'instructions/show_all', :instructions => @instructions %>
+  </div>
+
+
+  <p> Tried this recipe?
+    <%= link_to "Add a comment!", new_comment_path(:recipe_id => @recipe.id) %></p>
+
+  <%= render 'comments/show_all', :comments => @comments %>
+
+  <div class="bottom-nav-links">
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    <%= link_to 'Back', recipes_path %>
+  </div>
+</div>

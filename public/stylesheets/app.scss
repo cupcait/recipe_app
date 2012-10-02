@@ -23,7 +23,7 @@ header img {
 section {
   margin: 5em;
   font-size: 120%;
-  padding: 50px;
+  padding: 20px 50px 50px;
   background: #fff;
   margin-top: 10px;
 }
@@ -75,5 +75,9 @@ a.yes_button {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+.bottom-nav-links {
+
 }
 
