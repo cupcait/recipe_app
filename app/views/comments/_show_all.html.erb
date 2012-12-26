@@ -1,4 +1,7 @@
 <% comments.each do |comment| %>
+  <div id="comment-box">
+    <%= comment.created_at.to_formatted_s(:long) %>
     <br />
     <%= comment.content %>
+  </div>
 <% end %>

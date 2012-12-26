@@ -30,3 +30,8 @@
 #ingredient-list {
   position: relative;
   margin: 10px 0; }
+
+#comment-box {
+  padding: 10px;
+  border-bottom: 1px solid #cc1166;
+}
