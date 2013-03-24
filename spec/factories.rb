@@ -1,14 +1,25 @@
-Factory.define :recipe do |recipe|
-  recipe.name         "Cupakes"
-  recipe.source       "cupcait dot com"
-  recipe.url          "www.cupcait.com"
-  recipe.instructions "stir together, bake."
-end
+require 'factory_girl'
 
-Factory.define :ingredient do |ingredient|
-  ingredient.amount "2"
-  ingredient.unit "tablespoons"
-  ingredient.name "vanilla"
-  ingredient.association :recipe
+FactoryGirl.define do
+
+  factory :recipe do
+    name         "Cupakes"
+    source       "cupcait dot com"
+    url          "www.cupcait.com"
+    ingredient   create(:ingredient)
+    instruction  create(:instruction)
+  end
+
+  factory :ingredient do #|ingredient, recipe|
+    quantity "2"
+    name "vanilla"
+    association :recipe
+  end
+
+  factory :instruction do #|instruction, recipe|
+    content "Mix together and bake."
+    association :recipe
+  end
+
 end
 

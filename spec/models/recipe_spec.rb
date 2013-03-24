@@ -3,7 +3,10 @@ require 'spec_helper'
 describe Recipe do
 
   before(:each) do
-    @attr = { :name => "cupcakes", :source => "cupcait dot com", :url => "www.cupcait.com", :instructions => "combine ingredients, bake" }
+    # ingredient = FactoryGirl.create(:ingredient)
+    # instruction = FactoryGirl.create(:instruction)
+    @attr = { :name => "cupcakes", :source => "cupcait dot com", :url => "www.cupcait.com" }
+      # :instructions => [instruction], :ingredients => [ingredient] }
   end
 
   it "should create a new instance given valid attributes" do
@@ -20,10 +23,11 @@ describe Recipe do
     no_source_recipe.should_not be_valid
   end
 
-  it "should require instructions" do
-    no_instructions_recipe = Recipe.new(@attr.merge(:instructions => ""))
-    no_instructions_recipe.should_not be_valid
-  end
+  # TODO: re-add once relationships are sorted out.
+  # it "should require instructions" do
+  #   no_instructions_recipe = Recipe.new(@attr.merge(:instructions => ""))
+  #   no_instructions_recipe.should_not be_valid
+  # end
 
   it "should not require a url" do
     no_url_recipe = Recipe.new(@attr.merge(:url => ""))
@@ -34,8 +38,8 @@ describe Recipe do
 
     before(:each) do
       @recipe = Recipe.create(@attr)
-      @ing1 = Factory(:ingredient, :recipe => @recipe, :preparation => "sifted")
-      @ing2 = Factory(:ingredient, :recipe => @recipe, :preparation => "steeped")
+      @ing1 = create(:ingredient, :recipe => @recipe)
+      @ing2 = create(:ingredient, :recipe => @recipe)
     end
 
     it "should have a ingredients attribute" do

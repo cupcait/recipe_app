@@ -24,14 +24,14 @@ describe TagsController do
   # Tag. As you add validations to Tag, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {value: "yummy"}
   end
 
   describe "GET index" do
     it "assigns all tags as @tags" do
       tag = Tag.create! valid_attributes
       get :index
-      assigns(:tags).should eq([tag])
+      assigns(:tags).should include(tag)
     end
   end
 

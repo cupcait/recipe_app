@@ -13,9 +13,9 @@ class Recipe < ActiveRecord::Base
 
   validates :name,         :presence => true
   validates :source,       :presence => true
-  validates :ingredients,  :presence => true
-  validates :instructions, :presence => true
+  # validates :ingredients,  :presence => true
+  # validates :instructions, :presence => true
 
-  validates_inclusion_of :rating, :in => 0..5
+  # validates_inclusion_of :rating, :in => 0..5
 
 end

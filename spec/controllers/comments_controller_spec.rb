@@ -24,14 +24,17 @@ describe CommentsController do
   # Comment. As you add validations to Comment, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      content: "hello",
+      recipe_id: 1
+    }
   end
 
   describe "GET index" do
     it "assigns all comments as @comments" do
       comment = Comment.create! valid_attributes
       get :index
-      assigns(:comments).should eq([comment])
+      assigns(:comments).should include(comment)
     end
   end
 
