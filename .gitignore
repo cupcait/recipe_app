@@ -8,3 +8,4 @@ tmp/
 .project
 .DS_Store
 .idea/*
+.sass-cache/
