@@ -39,4 +39,7 @@ RecipeApp::Application.configure do
 
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
+
+  #Ember
+  config.ember.variant = :development
 end

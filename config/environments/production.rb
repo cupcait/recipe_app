@@ -55,4 +55,7 @@ RecipeApp::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  #Ember
+  # config.ember.variant = :production
 end

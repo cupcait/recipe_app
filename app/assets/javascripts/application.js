@@ -3,4 +3,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_self
+//= require ember
+//= require ember/recipe_app
 //= require_tree .
