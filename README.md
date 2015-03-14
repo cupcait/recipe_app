@@ -1,8 +1,6 @@
 CupCait Recipe App
 ------------------
 
-Created for my own personal use, feel free to use at your own risk. Currently a work in progress.
-
-Contact: caitlin@cupcait.com
+A practice Ruby on Rails app from a few years ago. Super WIP/learning experience, so be kind :)
 
 Copyright 2011 Caitlin Johnson.
